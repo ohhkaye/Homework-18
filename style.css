@@ -139,7 +139,7 @@ p {
 
 .ProjectItem {
     display: flex;
-    position: static;
+    position: relative;
     border: 5px solid #C8D3C3;
     border-radius: 25px;
     width: 400px;
@@ -270,15 +270,32 @@ p {
     display: grid;
     justify-content: space-around;
     grid-template-columns: 1fr 1fr 1fr;
-    height: 200px;
+    grid-template-areas: "cardOne cardTwo cardThree";
+    grid-template-rows: 1fr;
 }
 
-.gridbox {
+.cardOne {
+    grid-area: cardOne;
+}
+
+.cardTwo {
+    grid-area: cardTwo;
+}
+
+.cardThree {
+    grid-area: cardThree;
+}
+
+/* .gridbox {
     display:block;
     height: 50px;
     width: 50px;
-    background-color: green;
-}
+    /* background-color: green;
+    border: 5px solid #C8D3C3;
+    border-radius: 25px;
+    width: 400px;
+    height: 400px;
+} */
 
 /* ~~~~~~~~~~~~~~~~~~~ Footer Section ~~~~~~~~~~~~~~~~~~~ */
 
@@ -288,4 +305,26 @@ footer {
     padding: 4%;
     justify-content: end;
     align-items: center;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~ Mobile Media Query ~~~~~~~~~~~~~~~~~~~ */
+
+@media only screen and (max-width: 600px){
+    .ProjectsSection {
+        flex-direction: column;
+    }
+
+    .SkillsSection {
+        flex-direction: column;
+    }
+
+    .GridDeliverable {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "cardOne"
+            "cardTwo"
+            "cardThree";
+        grid-template-rows: 1fr 1fr 1fr;
+    }
+
 }
